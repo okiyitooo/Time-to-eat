@@ -1,0 +1,55 @@
+-CURBY-
+
+~Means I'm not sure if it's included, but it probably is
+?Means I have to ask if it's included
+
+CLI - not done
+GUI - next step
+RPG engine - makes job easier
+
+-Modes-
+
+Challenge mode: 
+	fixed time to play(have 15-30 days)
+	Try to live the healthiest(highest score) or worst(lowest score) live possible before time is up(beat high score)
+Easy Strict diet: 
+	just eat once per day
+	basically just learn how to interact with the game
+Regular: 
+	do whatever you want
+	Explore the game
+Crazy mode:
+	No limits on weight(can't die from eating too much)
+	Food starts to extend to other people and bigger things the bigger you get
+________________________________________________________________________
+|Classes:                                                               |
+|	Player(get String name):                                        |                   
+|		String name                                             |       
+|		int score                                               |       
+|		Unsigned int fullness?                                  |                   
+|		Unsigned int weight (50)                                |                       
+|		Unsigned int calories~                                  |                   
+|		int health (-10 to 10)                                  |                   
+|		int time 0                                              |       
+|		methods:                                                |       
+|			void doActivity(Activity = 0)                   |                               
+|			void die()?                                     |           
+|			void sleep()~                                   |               
+|			void getSick()?                                 |               
+|	Consumable: Food, Trash                                         |                   
+|		String[] names                                          |           
+|		int calories?                                           |           
+|		int healthiness (-10 to 10)                             |                       
+|		methods:                                                |       
+|			void beEaten()                                  |               
+|	Time?:                                                          |
+|		int days                                                |       
+|		methods:                                                |       
+|			void increment()                                |                   
+|			void reset()                                    |               
+|	Activity(int intensity, string name)?:                          |                               
+|		string name                                             |       
+|		int intensity                                           |           
+|		methods:                                                |       
+|			int beDone()                                    |               
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
