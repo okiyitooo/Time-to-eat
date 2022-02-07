@@ -2,8 +2,11 @@
 #include <string>
 
 //we'll implement this
-#include <Player.h>
-#include <Stage.h>
+#include "PlayerTime.h"
+#include "Player.h"
+#include "Consumables.h"
+
+#define MODE = 0
 
 bool playerCanPlay = true;
 
@@ -16,10 +19,9 @@ int main() {
 		//ask Player what they want to do
 		//give list of activities
 		//Time passes
-		std::cout << "Infinite loop" << std::endl
+		std::cout << "Infinite loop" << std::endl;
 		std::cin >> std::string(" ");
 	}
 	std::cout << "The end" <<std::endl;
 	return 0;
 }
-
