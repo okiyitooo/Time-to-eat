@@ -1,0 +1,13 @@
+-Programmers-
+
+Trent - Making consumable class and subsidaries
+Caleb - making Player class
+Kanaetochi - making stage questioning stage
+
+Researchers
+
+Marckenly -researching Activities and how much calories are lost
+	*Research activities for making you feel better
+Luis - research foods and how many calories they have
+	^-Deon wants to do this too
+

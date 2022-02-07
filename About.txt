@@ -1,11 +1,9 @@
 -CURBY-
 
-~Means I'm not sure if it's included, but it probably is
-?Means I have to ask if it's included
+*Means It's not necessary to implement right now
 
 CLI - not done
 GUI - next step
-RPG engine - makes job easier
 
 -Modes-
 
@@ -18,38 +16,68 @@ Easy Strict diet:
 Regular: 
 	do whatever you want
 	Explore the game
+	Can die from not sleeping enough
+	Can die from poisoning
 Crazy mode:
 	No limits on weight(can't die from eating too much)
 	Food starts to extend to other people and bigger things the bigger you get
-________________________________________________________________________
-|Classes:                                                               |
-|	Player(get String name):                                        |                   
-|		String name                                             |       
-|		int score                                               |       
-|		Unsigned int fullness?                                  |                   
-|		Unsigned int weight (50)                                |                       
-|		Unsigned int calories~                                  |                   
-|		int health (-10 to 10)                                  |                   
-|		int time 0                                              |       
-|		methods:                                                |       
-|			void doActivity(Activity = 0)                   |                               
-|			void die()?                                     |           
-|			void sleep()~                                   |               
-|			void getSick()?                                 |               
-|	Consumable: Food, Trash                                         |                   
-|		String[] names                                          |           
-|		int calories?                                           |           
-|		int healthiness (-10 to 10)                             |                       
-|		methods:                                                |       
-|			void beEaten()                                  |               
-|	Time?:                                                          |
-|		int days                                                |       
-|		methods:                                                |       
-|			void increment()                                |                   
-|			void reset()                                    |               
-|	Activity(int intensity, string name)?:                          |                               
-|		string name                                             |       
-|		int intensity                                           |           
-|		methods:                                                |       
-|			int beDone()                                    |               
-‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+________________________________________________________________________________________________________________
+|Classes:                                                               					|
+|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|
+|	Player(get String name):   (K, Caleb)                                     				|
+|		String name                                             					|
+|		int score                                               					|
+|		Unsigned int fullness (0-100)                                  					|
+|		Unsigned int weight (500)                                					|
+|		*bool isSick (false)										|
+|		*int sickDaysLeft(0)										|
+|														|
+|	        in drowsiness (0 -10)                         							|
+|		int health (-100 to 100)                                  					|
+|		int timeToDoStuff 1                                             				|
+|		methods:        										|
+|			void eat(Consumable) 	//calculate health gained and weight gained based on healthiness|
+|						//and calories respectively, also add chance of death if 	|
+|						//eating when fullness is greater than 90			|
+|						//Chance to call sick from eating unhealthy food		|
+|														|
+|			int doActivity(Activity) {								|
+|				//multiply time for activity by personal time(Timetodostuff)			|
+|				//lose weight from intensity							|
+|				//add chance of death if doing super intense activity with low health		|
+|				*//some activiities can get you sick, but don't implement this right now	|
+|				//However note health goes down based on intensity of the activity		|
+|				//and even more when you're sick						|
+|				//So chance of death is way higher when doing tactivities while sick		|
+|				*//Some activities can also make fou feel better(reduce sickdays)		|
+|				return timeToDOActivitiy							|
+|	                   	}										|
+|			void die()//call this function when appropriate						|
+|			void sleep()~//setdrowsiness to 0							|
+|			*void getSick()//consistently lowers health for a set amount of "TIME"			|
+|	Subclass												|
+|	Consumable: Food, Trash, (Trent)									|
+|		private unsigned int calories?                                           			|
+|		private int healthiness (-10 to 10)                             				|
+|		methods:                                                					|
+|			void beEaten() //sets calories to null or 0						|
+|			Children										|
+|			Food:											|
+|				//You don't have to do this part Trent						|
+|				//overload << operator to add rotten, fresh, rotting, etc state to name of food	|
+|				//Based on healthiness respectively						|
+|			Trash:											|
+|				//do this									|
+|				//override beAaten() to call the superclass and also create a chance of death	|
+|				//add anything if you feel inventive						|
+|	Time: (Kanaetochi Okiyi)										|
+|		unsigned int hours (max 24)									|
+|		overload +(int)operator (max 24) 								|
+|		overload << operator //<< morning, afternoon, evening or night based on value of hours		|
+|_______________________________________________________________________________________________________________|
+|	Research Data												|
+|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|
+|	map<string name, int calories> Food List 								|
+|	STRUCT<string name, int intensity,double time, bool canGetYOuSick, int reduceSickDays>Activity list	|
+|                                  										|
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾

@@ -1,0 +1,4 @@
+Make Easy mode to ask what to eat and what to do 3 times a cycle
+Make Player class
+Make Consumable class
+Research foods and activities
