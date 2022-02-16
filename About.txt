@@ -22,24 +22,24 @@ Crazy mode:
 	No limits on weight(can't die from eating too much)
 	Food starts to extend to other people and bigger things the bigger you get
 ________________________________________________________________________________________________________________
-|Classes:                                                               					|
+|Classes:													|
 |‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|
-|	Player(get String name):   (K, Caleb)                                     				|
-|		String name                                             					|
-|		int score                                               					|
-|		Unsigned int fullness (0-100)                                  					|
-|		Unsigned int weight (500)                                					|
+|	Player(get String name):   (K, Caleb)									|
+|		String name											|
+|		int score											|
+|		Unsigned int fullness (0-100)									|
+|		Unsigned int weight (500)									|
 |		*bool isSick (false)										|
 |		*int sickDaysLeft(0)										|
 |														|
-|	        in drowsiness (0 -10)                         							|
-|		int health (-100 to 100)                                  					|
-|		int timeToDoStuff 1                                             				|
-|		methods:        										|
-|			void eat(Consumable) 	//calculate health gained and weight gained based on healthiness|
-|						//and calories respectively, also add chance of death if 	|
+|	        in drowsiness (0 -10)										|
+|		int health (-100 to 100)									|
+|		int timeToDoStuff 1										|
+|		methods:											|
+|			void eat(Consumable)	//calculate health gained and weight gained based on healthiness|
+|						//and calories respectively, also add chance of death if	|
 |						//eating when fullness is greater than 90			|
-|						//Chance to call sick from eating unhealthy food		|
+|						//Chance to call getSick from eating unhealthy food		|
 |														|
 |			int doActivity(Activity) {								|
 |				//multiply time for activity by personal time(Timetodostuff)			|
@@ -49,17 +49,18 @@ ________________________________________________________________________________
 |				//However note health goes down based on intensity of the activity		|
 |				//and even more when you're sick						|
 |				//So chance of death is way higher when doing tactivities while sick		|
-|				*//Some activities can also make fou feel better(reduce sickdays)		|
+|				*//Some activities can also make you feel better(reduce sickdays)		|
+|				*//Based on how healthy the activity is						|
 |				return timeToDOActivitiy							|
-|	                   	}										|
+|				}										|
 |			void die()//call this function when appropriate						|
 |			void sleep()~//setdrowsiness to 0							|
 |			*void getSick()//consistently lowers health for a set amount of "TIME"			|
 |	Subclass												|
 |	Consumable: Food, Trash, (Trent)									|
-|		private unsigned int calories?                                           			|
-|		private int healthiness (-10 to 10)                             				|
-|		methods:                                                					|
+|		private unsigned int calories?									|
+|		private int healthiness (-10 to 10)								|
+|		methods:											|
 |			void beEaten() //sets calories to null or 0						|
 |			Children										|
 |			Food:											|
@@ -72,12 +73,23 @@ ________________________________________________________________________________
 |				//add anything if you feel inventive						|
 |	Time: (Kanaetochi Okiyi)										|
 |		unsigned int hours (max 24)									|
-|		overload +(int)operator (max 24) 								|
+|		overload +(int)operator (max 24)								|
 |		overload << operator //<< morning, afternoon, evening or night based on value of hours		|
+|	Stage(Player, mode)											|
+|		Player player											|
+|		int mode											|
+|		methods:											|
+|			void askPlayerWhatTheyWantToD0()\\different menus for different modes			|
+|			void listFoods()\\lists a set number of foods(static variable)				|
+|					\\gives option to go to next number of foods				|
+|					\\I dunno if i they should have everything in their fridges or not	|
+|			void listActivities()\\does the same as listfoods()but with activities			|
+|														|
 |_______________________________________________________________________________________________________________|
 |	Research Data												|
 |‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|
-|	map<string name, int calories> Food List 								|
+|	map<string name, int calories> Food List								|
 |	STRUCT<string name, int intensity,double time, bool canGetYOuSick, int reduceSickDays>Activity list	|
-|                                  										|
+|	\\Overload << operator to list important attributes							|
+|														|
 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
