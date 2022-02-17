@@ -3,21 +3,24 @@ An program centered on feeding the main character and calculating their calories
 
 It should have 4 modes:
 
-Mode 1 - (easy/tutorial mode):
+Mode 1 - (easy/tutorial/academia mode):
 	The main character eats one meal for morning, lunch and dinner.
 	The main character does one activity for morning lunch and dinner.
 	After each activity and meal the player gets informed about how many calories they've gained or lost.
 	At the end of every day the character sleeps.
 	This mode teaches the player how the program works.
+	This was Deon's original idea
 	This mode can be skipped.
 Mode 2 - (Regular mode):
 	The main character can eat multiple meals and do multiple activities regardless of the time of day.
 	The main character can sleep whenever they want.
 	The main character has the ability to get sick or tired based on unhealthy choices they make.
 	The main character can die from bad choices, not limited to; over eating, eating poisons, not sleeping enough.
+	Brought up by Caleb
 Mode 3 - (Challenge mode):
 	The main character has 30 days to make healthy choices.
 	The rules are the same as in the regular mode.
-	This mode was brought up by trent.
+	This mode was Inspired by Trent.
 Mode 4 - (Game/sandbox mode):
 	The same rules for Mode 2, but the player can not die from eating too much, the goal is to see how heavy you can get.
+	Inspired by Kanaetochi.
