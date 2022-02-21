@@ -1,0 +1,5 @@
+user story
+
+The main character eats one time breakfast,lunch,and,dinner. 
+The character acts an activity each time of monrning,afternoon,night.
+The character eats throughout the day and the SIMULATION informs the user what benefits were gained from the meal. The USER has to make it through several days of a healthy diet by the end of the SIMULATION/ to make it on the sports team/ competition. Different SIMULATION modes are in development.
