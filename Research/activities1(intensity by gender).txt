@@ -1,0 +1,28 @@
+Activity			Calories Burned per Hour*
+					Man	Woman
+Light Activity:			300	240
+
+Cleaning house
+Office work
+Playing baseball
+Playing golf
+		
+Moderate Activity:		460	370
+
+Walking briskly (3.5 mph)
+Gardening
+Cycling (5.5 mph)
+Dancing
+Playing basketball
+		
+Strenuous Activity:		730	580
+
+Jogging (9 min/mile)
+Playing football
+Swimming
+		
+Very Strenuous Activity:	920	740
+
+Running (7 min/mile)
+Racquetball
+Skiing
