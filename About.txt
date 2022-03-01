@@ -1,6 +1,7 @@
 -CURBY-
 
 *Means It's not necessary to implement right now
+⩗Means It has been completed for the current stage of the project
 
 CLI - not done
 GUI - next step
@@ -57,22 +58,29 @@ ________________________________________________________________________________
 |			void sleep()~//setdrowsiness to 0							|
 |			void getSick()//consistently lowers health for a set amount of "TIME"			|
 |														|
-|	Consumable: Food, Trash											|
+|	⩗Consumable: Food, Trash										|
 |		private string name;										|
 |		private int calories										|
 |		private int healthiness (-10 to 10)								|
 |		methods:											|
-|			void beEaten() //sets calories to null or 0						|
+|			bool beEaten()	//sets calories to null or 0						|
+|					//returns true if is Trash						|
 |			string getName()									|
 |			Children										|
 |			Food:											|
 |				getName()	// adds rotten, fresh, rotting, etc state to name of food	|
 |						// based on healthiness and time				|
+|						// 9-10:	GodTier						|
+|						// 6-8:		Perfect						|
+|						// 2-5:		Healthy						|
+|						// -1 - 1:	Fresh						|
+|						// -2 - -5:	Spoiled						|
+|						// -6 - -8:	Rotting						|
+|						// -9 - -10:	RadioActive					|
 |				getDetails()	//returns attributes						|
 |			Trash:											|
-|				//override beEaten() to call the superclass and also create a chance of death	|
-|				//add anything if you feel inventive						|
-|	Time: (Kanaetochi Okiyi)										|
+|				//override beEaten() to call the superclass and return true			|
+|	⩗Time: (Kanaetochi Okiyi)										|
 |		int hours (max 24)										|
 |		int days //starts at 0										|
 |		add(int) // calculate new date based on added time						|
@@ -94,9 +102,11 @@ ________________________________________________________________________________
 |	*GYM: //Handles activities										|
 |		List<Activity> Activity_list									|
 |		List beGotten() returns Activity_list								|
+|				//only sends the first {X} elements						|
 |	*Fridge: //Handles Food_list										|
 |		List<Food> Food_list										|
 |		List beGotten() returns Food_list								|
+|				// only sends the first {X} elements						|
 |														|
 |_______________________________________________________________________________________________________________|
 |	Research Data												|
