@@ -10,7 +10,7 @@ GUI - next step
 Challenge mode: 
 	fixed time to play(have 15-30 days)
 	Try to live the healthiest(highest score) or worst(lowest score) live possible before time is up(beat high score)
-Easy Strict diet: 
+ACADEMIA diet: 
 	just eat once per day
 	basically just learn how to interact with the game
 Regular: 
@@ -27,8 +27,8 @@ ________________________________________________________________________________
 |	Player(get String name):   (K, Caleb)									|
 |		String name											|
 |		int score											|
-|		Unsigned int fullness (0-100)									|
-|		Unsigned int weight (500)									|
+|		int fullness (0-100)										|
+|		int weight (500)										|
 |		*bool isSick (false)										|
 |		*int sickDaysLeft(0)										|
 |														|
@@ -55,41 +55,55 @@ ________________________________________________________________________________
 |				}										|
 |			void die()//call this function when appropriate						|
 |			void sleep()~//setdrowsiness to 0							|
-|			*void getSick()//consistently lowers health for a set amount of "TIME"			|
-|	Subclass												|
-|	Consumable: Food, Trash, (Trent)									|
-|		private unsigned int calories?									|
+|			void getSick()//consistently lowers health for a set amount of "TIME"			|
+|														|
+|	Consumable: Food, Trash											|
+|		private string name;										|
+|		private int calories										|
 |		private int healthiness (-10 to 10)								|
 |		methods:											|
 |			void beEaten() //sets calories to null or 0						|
+|			string getName()									|
 |			Children										|
 |			Food:											|
-|				//You don't have to do this part Trent						|
-|				//overload << operator to add rotten, fresh, rotting, etc state to name of food	|
-|				//Based on healthiness respectively						|
+|				getName()	// adds rotten, fresh, rotting, etc state to name of food	|
+|						// based on healthiness and time				|
+|				getDetails()	//returns attributes						|
 |			Trash:											|
-|				//do this									|
 |				//override beAaten() to call the superclass and also create a chance of death	|
 |				//add anything if you feel inventive						|
 |	Time: (Kanaetochi Okiyi)										|
-|		unsigned int hours (max 24)									|
-|		overload +(int)operator (max 24)								|
-|		overload << operator //<< morning, afternoon, evening or night based on value of hours		|
-|	Stage(Player, mode)											|
+|		int hours (max 24)										|
+|		int days //starts at 0										|
+|		add(int) // calculate new date based on added time						|
+|		toString() // returns text in the format "Part_of_Day 00:00MM ${days}"				|
+|	Stage(Player, mode, Time)										|
 |		Player player											|
 |		int mode											|
 |		methods:											|
 |			void askPlayerWhatTheyWantToD0()\\different menus for different modes			|
+|			*void getFridge()\\gets Food from static fridge class					|
+|			*void getGym()	\\ gets activities from staticgym class					|
+|			// the below would be replaced by the above upon completion				|
+|			// te below would be sent to a Fridge class and Gym class respectively			|
 |			void listFoods()\\lists a set number of foods(static variable)				|
 |					\\gives option to go to next number of foods				|
-|					\\I dunno if i they should have everything in their fridges or not	|
+|					\\I dunno if they should have everything in their fridges or not	|
 |			void listActivities()\\does the same as listfoods()but with activities			|
+|														|
+|	*GYM: //Handles activities										|
+|		List<Activity> Activity_list									|
+|		List beGotten() returns Activity_list								|
+|	*Fridge: //Handles Food_list										|
+|		List<Food> Food_list										|
+|		List beGotten() returns Food_list								|
 |														|
 |_______________________________________________________________________________________________________________|
 |	Research Data												|
 |‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|
-|	map<string name, int calories> Food List								|
-|	STRUCT<string name, int intensity,double time, bool canGetYOuSick, int reduceSickDays>Activity list	|
-|	\\Overload << operator to list important attributes							|
+|	FOOD^													|
+|														|
+|	CLASS<string name, int intensity,double time, bool canGetYOuSick, int healthiness>Activity list		|
+|		toString() //returns attributes;								|
 |														|
 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
