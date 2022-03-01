@@ -70,7 +70,7 @@ ________________________________________________________________________________
 |						// based on healthiness and time				|
 |				getDetails()	//returns attributes						|
 |			Trash:											|
-|				//override beAaten() to call the superclass and also create a chance of death	|
+|				//override beEaten() to call the superclass and also create a chance of death	|
 |				//add anything if you feel inventive						|
 |	Time: (Kanaetochi Okiyi)										|
 |		int hours (max 24)										|
