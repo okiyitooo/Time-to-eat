@@ -82,6 +82,7 @@ ________________________________________________________________________________
 |				//override beEaten() to call the superclass and return true			|
 |	⩗Time: (Kanaetochi Okiyi)										|
 |		int hours (max 24)										|
+|		int weeks //starts at 0										|
 |		int days //starts at 0										|
 |		add(int) // calculate new date based on added time						|
 |		toString() // returns text in the format "Part_of_Day 00:00MM ${days}"				|
@@ -99,11 +100,11 @@ ________________________________________________________________________________
 |					\\I dunno if they should have everything in their fridges or not	|
 |			void listActivities()\\does the same as listfoods()but with activities			|
 |														|
-|	*GYM: //Handles activities										|
+|	*GYM: //Activity Container Class										|
 |		List<Activity> Activity_list									|
 |		List beGotten() returns Activity_list								|
 |				//only sends the first {X} elements						|
-|	*Fridge: //Handles Food_list										|
+|	*Fridge: //Food Container Class										|
 |		List<Food> Food_list										|
 |		List beGotten() returns Food_list								|
 |				// only sends the first {X} elements						|
