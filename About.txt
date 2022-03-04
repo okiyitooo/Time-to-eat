@@ -89,18 +89,18 @@ ________________________________________________________________________________
 |	Stage(Player, mode, Time)										|
 |		Player player											|
 |		int mode											|
+|		Timetime;											|
+|		Fridge fridge;											|
+|		Gym gym;											|
 |		methods:											|
 |			void askPlayerWhatTheyWantToD0()\\different menus for different modes			|
-|			*void getFridge()\\gets Food from static fridge class					|
-|			*void getGym()	\\ gets activities from staticgym class					|
-|			// the below would be replaced by the above upon completion				|
-|			// te below would be sent to a Fridge class and Gym class respectively			|
-|			void listFoods()\\lists a set number of foods(static variable)				|
+|			*Food[] getFridge()\\gets Food from static fridge class					|
+|					\\lists a set number of foods(static variable)				|
 |					\\gives option to go to next number of foods				|
 |					\\I dunno if they should have everything in their fridges or not	|
-|			void listActivities()\\does the same as listfoods()but with activities			|
+|			*Activity[] getGym()	\\ Very similar to Fridge class but for Activities		|
 |														|
-|	*GYM: //Activity Container Class										|
+|	*GYM: //Activity Container Class									|
 |		List<Activity> Activity_list									|
 |		List beGotten() returns Activity_list								|
 |				//only sends the first {X} elements						|
