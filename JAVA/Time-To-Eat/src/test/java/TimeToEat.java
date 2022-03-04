@@ -12,11 +12,10 @@ import team2.time.to.eat.*;
  */
 public class TimeToEat {
     public static void main(String[] args) {
-        Player p;
+        Player p= new Player();
         Stage s;
-        while (true){
+        while (p.isAlive){
             //statement for running game
-            break;
         }
         
     }

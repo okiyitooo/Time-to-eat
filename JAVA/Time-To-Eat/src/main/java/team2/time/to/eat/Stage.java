@@ -22,7 +22,11 @@ public class Stage {
         this.fridge = fridge;
         this.gym = gym;
     }
-    
+    public void PROMPT(){
+        if (player.isAlive){
+            //I'm ver confused about how this wuld work
+        }
+    }
     public Food[] getFridge(){
         return fridge.beGotten();
     }
