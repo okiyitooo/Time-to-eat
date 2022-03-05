@@ -10,8 +10,19 @@ package team2.time.to.eat;
  */
 public class Activity {
     public String name;
-    public int intensity;
+    public int intensity, healthiness;
     public double time;
     public boolean isUnhealthy;
-    public int healthiness;
+    Activity(String name,int intensity, int healthiness, double time, boolean isUnhealthy){
+        this.name = name;
+        this.intensity = intensity;
+        this . healthiness = healthiness;
+        this            .                              time = time;
+        this
+                .
+                        isUnhealthy
+                                        =
+                                                isUnhealthy
+                                                            ;
+    }
 }

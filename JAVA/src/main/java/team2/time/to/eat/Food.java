@@ -12,7 +12,6 @@ public class Food extends Consumable {
                 +name,
                 calories,
                 healthiness);
-        String State = "";
     }
     
 }
