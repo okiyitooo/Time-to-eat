@@ -78,6 +78,9 @@ ________________________________________________________________________________
 |						// -6 - -8:	Rotting						|
 |						// -9 - -10:	RadioActive					|
 |				getDetails()	//returns attributes						|
+|				SUBCLASS:									|
+|					Poison:	\\A classification for very bad foods				|
+|						int Danger							|
 |			Trash:											|
 |				//override beEaten() to call the superclass and return true			|
 |	⩗Time: (Kanaetochi Okiyi)										|
@@ -94,7 +97,7 @@ ________________________________________________________________________________
 |		Gym gym;											|
 |		methods:											|
 |			void askPlayerWhatTheyWantToD0()\\different menus for different modes			|
-|			*Food[] getFridge()\\gets Food from static fridge class					|
+|			*Consumable[] getFridge()\\gets Food from static fridge class				|
 |					\\lists a set number of foods(static variable)				|
 |					\\gives option to go to next number of foods				|
 |					\\I dunno if they should have everything in their fridges or not	|
@@ -114,7 +117,16 @@ ________________________________________________________________________________
 |‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|
 |	FOOD^													|
 |														|
-|	CLASS<string name, int intensity,double time, bool canGetYOuSick, int healthiness>Activity list		|
-|		toString() //returns attributes;								|
+|	Activity:												|
+|		string name											|
+|		int intensity											|
+|		double time											|
+|		bool canGetYOuSick										|
+|		int healthiness>Activity									|
+|		methods:											|
+|			toString() //returns attributes;							|
+|		SUBCLASS:											|
+|			Danger:	// For the most dangerous activities, truly intense				|
+|				bool isDeadly //how close to a 100% is the chance of death			|
 |														|
 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
