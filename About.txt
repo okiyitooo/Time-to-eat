@@ -23,7 +23,7 @@ Crazy mode:
 	No limits on weight(can't die from eating too much)
 	Food starts to extend to other people and bigger things the bigger you get
 ________________________________________________________________________________________________________________
-|Classes:													|
+|	Classes:												|
 |‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|
 |	Player(get String name):   (K, Caleb)									|
 |		String name											|
@@ -33,7 +33,7 @@ ________________________________________________________________________________
 |		*bool isSick (false)										|
 |		*int sickDaysLeft(0)										|
 |														|
-|	        in drowsiness (0 -10)										|
+|	        in drowsiness (0 - 10)										|
 |		int health (-100 to 100)									|
 |		int timeToDoStuff 1										|
 |		methods:											|
