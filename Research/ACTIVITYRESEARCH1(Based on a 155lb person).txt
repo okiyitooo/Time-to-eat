@@ -51,7 +51,7 @@ Go.Skinny.Dipping 252
 LUGE 247
 Chew.Soccer.Ball 252
 Play.Tennis 252
-Beat.Lebron.James 288
+Laugh.at.Lebron.James 288
 Stare.at.Football 288
 Play.ice.Hockey 288
 Go.Rock.Climbing 282
