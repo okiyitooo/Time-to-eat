@@ -1,12 +1,7 @@
---vegetable salads				cal.
-
 Mixed-Salad-Greens	9
 Lettuce-Salad-with-Assorted-Vegetables	11
 Lettuce-Salad-with-Assorted-Vegetables-(Including.Tomatoes.and/or.Carrots)	12
 Lettuce-Salad-with-Avocado(Tomato.and/or.Carrots)	45
-
---salads without meat	cal.
-
 Bean-salad	114
 Cabbage-salad	269
 Egg-salad	706
@@ -15,22 +10,16 @@ Greek-salad	106
 Pea-salad	501
 Potato-salad	358
 Tuna-salad	383
-
---salads with meat		cals.
 Beef-salad	495
 Chicken-garden	59
 Turkey-salad	417
 Ham-salad	395
 Cobb-salad	161
-
---salads with seafoods 		cals.
 Crab-salad	381
 Lobster-salad	189
 Salmon-salad	406
 Saefood-garden	50
 Shrimp-salad	258
-
---Sweet green 			clas.
 CHICKEN-CHIMICHURRI	620
 MUSHROOM-CHIMICHURRI		615
 SHROOMAMI	645
