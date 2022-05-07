@@ -304,7 +304,7 @@ public class Main
         daycalcount -= caloriesburnt;
         weekcalcount -= caloriesburnt;
 
-   }
+   }\
 
    //sleep function 
    void sleep(){
