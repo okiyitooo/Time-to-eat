@@ -1,19 +1,19 @@
 
 package frontEnd;
 
-import timetoeat.TimeToEat;
-import timetoeat.DataAccess;
+import backEnd.Operator;
+import backEnd.DataAccess;
 
-//import javax.swing.JOptionPane;
+import javax.swing.JOptionPane;
 import java.util.*;
 import javax.swing.*;
 
-public class Main extends javax.swing.JFrame {
+public class FoodData extends javax.swing.JFrame {
 
     /**
      * Creates new form Main
      */
-    public Main() {
+    public FoodData() {
         initComponents();
     }
 
@@ -28,7 +28,7 @@ public class Main extends javax.swing.JFrame {
 
         food = new javax.swing.JTextField();
         calories = new javax.swing.JTextField();
-        submit = new javax.swing.JButton();
+        add = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -37,6 +37,9 @@ public class Main extends javax.swing.JFrame {
         displayed = new javax.swing.JButton();
         upload = new javax.swing.JButton();
         createDB = new javax.swing.JButton();
+        createPlayer = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        delete = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,11 +47,11 @@ public class Main extends javax.swing.JFrame {
 
         calories.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
 
-        submit.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        submit.setText("Submit");
-        submit.addActionListener(new java.awt.event.ActionListener() {
+        add.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        add.setText("Add");
+        add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitActionPerformed(evt);
+                addActionPerformed(evt);
             }
         });
 
@@ -85,10 +88,29 @@ public class Main extends javax.swing.JFrame {
         });
 
         createDB.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        createDB.setText("Create");
+        createDB.setText("Install");
         createDB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 createDBActionPerformed(evt);
+            }
+        });
+
+        createPlayer.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        createPlayer.setText("Create Player");
+        createPlayer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createPlayerActionPerformed(evt);
+            }
+        });
+
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jButton1.setText("Exit");
+
+        delete.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        delete.setText("Delete");
+        delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteActionPerformed(evt);
             }
         });
 
@@ -101,28 +123,35 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(221, 221, 221)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGap(97, 97, 97)
-                            .addComponent(submit)
-                            .addGap(63, 63, 63)
-                            .addComponent(displayed)
-                            .addGap(37, 37, 37)
-                            .addComponent(upload)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(createDB))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGap(88, 88, 88)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(87, 87, 87)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(calories, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(food, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 710, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(88, 88, 88)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(87, 87, 87)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(calories, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(food, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 710, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(upload)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(add, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(19, 19, 19)
+                                        .addComponent(delete)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(displayed)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(createPlayer))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(57, 57, 57)
+                                        .addComponent(createDB)))))))
                 .addContainerGap(80, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -130,7 +159,11 @@ public class Main extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addComponent(jLabel3)
-                .addGap(93, 93, 93)
+                .addGap(22, 22, 22)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(createDB)
+                    .addComponent(upload))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(food, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -140,23 +173,25 @@ public class Main extends javax.swing.JFrame {
                         .addGap(125, 125, 125)
                         .addComponent(jLabel2))
                     .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(submit)
+                    .addComponent(add)
                     .addComponent(displayed)
-                    .addComponent(upload)
-                    .addComponent(createDB))
+                    .addComponent(createPlayer)
+                    .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(51, 51, 51)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(100, 100, 100))
+                .addGap(18, 18, 18)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
+    private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
         DataAccess obj = new DataAccess();
-        TimeToEat eat = new TimeToEat();
+        Operator op = new Operator();
      try {  
         String f = this.food.getText();
         Integer c = Integer.parseInt(this.calories.getText());
@@ -164,17 +199,18 @@ public class Main extends javax.swing.JFrame {
         obj.setFood(f);
         obj.setCalories(c);
         
-      //  eat.storage(obj.getFood(), obj.getCalories());
+        op.storage(obj.getFood(), obj.getCalories());
+        JOptionPane.showMessageDialog(this, "<html><h1 style=\"font-size:1.5em\">" + f + " was added to the database!</h1></html>"); 
      }
      catch (Exception ex){
          JOptionPane.showMessageDialog(this, "Error Code: " + ex);
      }
-    }//GEN-LAST:event_submitActionPerformed
+    }//GEN-LAST:event_addActionPerformed
 
     private void displayedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayedActionPerformed
-        TimeToEat eat = new TimeToEat();
+        Operator op = new Operator();
         try {
-        String s = eat.display();
+        String s = op.display();
         this.jTextArea1.setText(s);
         }
         catch (Exception ex){
@@ -183,15 +219,15 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_displayedActionPerformed
 
     private void uploadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadActionPerformed
-        TimeToEat eat = new TimeToEat();
+        Operator op = new Operator();
         JFileChooser dlg = new JFileChooser();
-            
         int option = dlg.showOpenDialog(this);
+        
         if (option == JFileChooser.APPROVE_OPTION) {
             
             String filename = dlg.getSelectedFile().getAbsolutePath();
             
-            eat.loadFile(filename);
+            op.loadFile(filename);
             
             JOptionPane.showMessageDialog(this, " Loaded successfully!");
         }
@@ -199,10 +235,30 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_uploadActionPerformed
 
     private void createDBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createDBActionPerformed
-        TimeToEat eat = new TimeToEat();
-        
-        eat.createDB();
+        Operator op = new Operator();
+        op.createDB();
     }//GEN-LAST:event_createDBActionPerformed
+
+    private void createPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createPlayerActionPerformed
+        CreatePlayer cp = new CreatePlayer(this, true);
+        cp.setVisible(true);
+    }//GEN-LAST:event_createPlayerActionPerformed
+
+    private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
+        DataAccess obj = new DataAccess();
+        Operator op = new Operator();
+        try {  
+            String f = this.food.getText();
+
+            obj.setFood(f);
+
+            op.delete(obj.getFood());
+            JOptionPane.showMessageDialog(this, "<html><h1 style=\"font-size:1.5em\">" + f + " was deleted from the database!</h1></html>"); 
+        }
+        catch (Exception ex){
+            JOptionPane.showMessageDialog(this, "Error Code: " + ex);
+        }
+    }//GEN-LAST:event_deleteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -221,36 +277,40 @@ public class Main extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FoodData.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FoodData.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FoodData.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FoodData.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Main().setVisible(true);
+                new FoodData().setVisible(true);
             }
         });
         
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton add;
     private javax.swing.JTextField calories;
     private javax.swing.JButton createDB;
+    private javax.swing.JButton createPlayer;
+    private javax.swing.JButton delete;
     private javax.swing.JButton displayed;
     private javax.swing.JTextField food;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JButton submit;
     private javax.swing.JButton upload;
     // End of variables declaration//GEN-END:variables
 }
